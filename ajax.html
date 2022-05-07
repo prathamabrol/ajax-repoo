@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        table.GeneratedTable {
+            width: 100%;
+            background-color: #76d6c9a9;
+            border-collapse: collapse;
+            border-width: 2px;
+            border-color: #f0652e;
+            border-style: solid;
+            color: #000000;
+        }
+        
+        table.GeneratedTable td,
+        table.GeneratedTable th {
+            border-width: 2px;
+            border-color: #1eff00;
+            border-style: solid;
+            padding: 3px;
+        }
+        
+        table.GeneratedTable thead {
+            background-color: #00ff2a;
+        }
+    </style>
+    <title>AJAX Assignment 1 B</title>
+</head>
+
+<body>
+    <section class="text-gray-600 body-font relative" style="background-color: #f3f713">
+        
+        <div class="container px-5 py-20 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Pratham Abrol A02</h1>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Aman Sharma A04</h1>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Samira korabu A26</h1>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Mayuri Chakre A35</h1>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">A Simple form to work with AJAX POST Method.</p>
+            </div>
+            <form action="#">
+                <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                    <div class="flex flex-wrap -m-2">
+                        <div class="p-2 w-1/2">
+                            <div class="relative">
+                                <label for="name" class="leading-7 text-sm text-gray-600">Username</label>
+                                <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                            
+                        </div>
+                        <div class="p-2 w-1/2">
+                            <div class="relative">
+                                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                                <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                            
+                        </div>
+                        <div class="p-2 w-1/2">
+                            <div class="relative">
+                                <label for="pass" class="leading-7 text-sm text-gray-600">Password</label>
+                                <input type="password" id="pass" name="pass" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                            
+                        </div>
+                        <div class="p-2 w-1/2">
+                            <div class="relative">
+                                <label for="Contact" class="leading-7 text-sm text-gray-600">Contact</label>
+                                <input type="number" min="10" id="con" name="con" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                        </div>
+                        <div class="p-2 w-full">
+                            <input type="submit" id="sub" name="sub" placeholder="register" onclick="savedata()" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </section>
+    <script>
+        function savedata() {
+            let name, email, pass, con;
+            name = document.getElementById("name").value;
+            email = document.getElementById("email").value;
+            pass = document.getElementById("pass").value;
+            con = document.getElementById("con").value;
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+            localStorage.setItem("pass", pass);
+            localStorage.setItem("con", con);
+        }
+    </script>
+
+    <h1 class="text-center sm:text-3xl text-2xl font-medium title-font mb-3 text-gray-900">DATA PRESENT IN LOCAL STORAGE</h1>
+    <table class="GeneratedTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <script>
+                        document.write(localStorage.getItem("name"))
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(localStorage.getItem("email"))
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(localStorage.getItem("pass"))
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(localStorage.getItem("con"))
+                    </script>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
